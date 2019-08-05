@@ -1,0 +1,18 @@
+<h1>What the coach said...</h1>
+<h3>Your question:</h3>
+<p><%= @question %></p>
+<br>
+
+<!-- Check for question value -->
+<% if @question.downcase == 'i am going to work'  %>
+  <% answer = 'Great!' %>
+<% elsif @question.include?("?") %>
+  <% answer = 'silly question, get dressed and go to work!' %>
+<% else %>
+  <% answer = "I don't care, get dressed and go to work!" %>
+<% end %>
+
+<h3>Coach's answer:</h3>
+<p id="answer"><%= answer %></p>
+<br>
+<%= link_to "Ask something else", ask_path %>
